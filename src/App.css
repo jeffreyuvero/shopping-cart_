@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+.text-gray {
+  color : #424140;
+  font-weight: bold;
+  font-family: 'Monaco';
+}
+
+
+.img-property {
+  width: 194px;
+  height: 188px; 
+}

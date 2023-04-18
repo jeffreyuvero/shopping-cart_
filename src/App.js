@@ -1,6 +1,8 @@
 
 import Product from "./components/Product";
 import Cart from "./components/Cart";
+// import Cart from "./components/Cart";
+
 
 function App() {
   return (
