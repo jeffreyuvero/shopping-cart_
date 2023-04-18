@@ -49,3 +49,18 @@
   width: 194px;
   height: 188px; 
 }
+
+.title {
+  color: #9acc66;
+  margin: 10px;
+  font-weight: bold;
+  font-size: large;
+  margin-left: -78px;
+  /* background-color : #424140; */
+}
+
+.navigator {
+  background-color: #424140; 
+  padding: 5px 0 5px 0;
+
+}
