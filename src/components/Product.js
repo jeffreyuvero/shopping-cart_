@@ -1,45 +1,22 @@
-import axios from 'axios'; 
-import { 
-    useReducer, 
-    useState, 
-    useEffect
- } from "react";
+
+
 
  import '../App.css'
 
  import {INITIAL_STATE, postReducer} from "../postReducer";
 
-const Product = () => {
+const Product = (props) => {
 
-    const [information, setInformation] = useState(); 
-    const [ state, dispatch ] = useReducer(postReducer, INITIAL_STATE)
-
-    const fetchdata = async () => {
-        const response = axios.get('https://fakestoreapi.com/products?limit=10')
-        response.then((data) => {
-            dispatch({
-                type: "GET_PRODUCTS", 
-                payload: data.data
-            })
-            setInformation(data.data)
-            console.log(data.data)
-        })
+    if (!props.information ) {
+        return null; 
     }
-
-    useEffect( () => {
-        fetchdata();
-    }, [])
-
-
-    if (!information ) {
-        return null
-    }
+    
 
     return(
         <>
             <div className = "row" style={{margin: "5px 5px 5px 10px"}}>
               {
-                    information.map((data) => {
+                    props.information.map((data) => {
                         return(
                             <div class="card" style={{width: "18rem", margin: "5px 5px 5px 5px"}}>
                                 <img class="card-img-top img-property" src={data.image} alt="Card image cap" />
@@ -62,7 +39,7 @@ const Product = () => {
                                     </div>
 
                                 </div>
-                                <button style = {{backgroundColor: "#9acc66", color : "white", fontFamily: "Sans-serif", fontWeight: "bold"}}>
+                                <button onClick = {() => props.onHandleAddToCart(data.id)} style = {{backgroundColor: "#9acc66", color : "white", fontFamily: "Sans-serif", fontWeight: "bold"}}>
                                     Add to Cart
                                 </button>
                             </div>

@@ -2,7 +2,6 @@ import shoppingCart from '../images/shoppingCart.png'
 import shoppingCart2 from '../images/shoppingCart2.png'
 
 
-
 const Header = (props) => {
     return(
         <div className = "col-12 ">

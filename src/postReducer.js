@@ -1,6 +1,6 @@
 export const INITIAL_STATE ={
     product : [],
-    cart: [1,2,3]
+    cart: []
 }
 
 
@@ -10,6 +10,12 @@ export const postReducer = (state, action) => {
             return {
                 ...state,
                 product: action
+            }
+        case "ADD_CART":
+            console.log(action.payload)
+            return {
+                ...state,
+                cart: [...state.cart, action.payload]
             }
         default:
             return state; 
