@@ -47,6 +47,16 @@ function App() {
       dispatch({
           type: "GET_CART"
       })
+      
+  }
+
+
+  const onHandleRemoveCart = (itemId) => {
+    dispatch({
+        type: "REMOVE_CART", 
+        payload: itemId
+    })
+
   }
 
 
@@ -58,7 +68,7 @@ function App() {
                 <Product information = {information} onHandleAddToCart= {onHandleAddToCart}/>
             </div>
             <div className = "col-2">
-                <Cart collections = {state.collect_cart.new_product}/>
+                <Cart collections = {state.collect_cart.new_product} onHandleRemoveCart = {onHandleRemoveCart}/>
             </div>
         </div>
     </div>

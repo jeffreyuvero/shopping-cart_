@@ -12,7 +12,7 @@ const cart = (props) => {
                 {
                     props.collections.map((collect, index) => {
                         return(
-                            <div className="card-body">
+                            <div className="card-body" key = {index}>
                                 <div className="card">
                                     <div className = "row">
                                         <div className = "col-2">
@@ -24,9 +24,12 @@ const cart = (props) => {
                                                 Category: <span className = "text-gray">{collect.category}</span>
                                             </div>
                                             <div className = "col-2">
-                                                <button> 
+                                                {/* <button onClick = {props.onHandleRemoveCart(collect.id)}> 
                                                     <img src={cancel} alt="Card image cap" />
-                                                </button>
+                                                </button> */}
+
+
+                                                <button onClick = {() => props.onHandleRemoveCart(collect.id)} style = {{backgroundColor: "#9acc66", color : "white", fontFamily: "Sans-serif", fontWeight: "bold"}}>x</button>
                                             </div>
                                         </div>
                                 </div>
