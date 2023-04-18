@@ -17,10 +17,6 @@ import {INITIAL_STATE, postReducer} from "./postReducer";
 
 
 
-
-
-
-
 function App() {
 
   const [information, setInformation] = useState(); 
@@ -47,18 +43,24 @@ function App() {
           type: "ADD_CART", 
           payload: itemId
       })
+
+      dispatch({
+          type: "GET_CART"
+      })
   }
 
-  console.log(state)
-
-  console.log("state.cart.length" )
-  console.log( state.cart )
 
   return (
     <div className="App">
         <Header ordered = { state.cart.length }/>
-        <Product information = {information} onHandleAddToCart= {onHandleAddToCart}/>
-        <Cart />
+        <div className = "row">
+            <div className = "col-10">
+                <Product information = {information} onHandleAddToCart= {onHandleAddToCart}/>
+            </div>
+            <div className = "col-2">
+                <Cart collections = {state.collect_cart.new_product}/>
+            </div>
+        </div>
     </div>
   );
 }

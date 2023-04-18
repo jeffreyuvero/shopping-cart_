@@ -14,7 +14,7 @@ const Product = (props) => {
 
     return(
         <>
-            <div className = "row" style={{margin: "5px 5px 5px 10px"}}>
+            <div className = "row product-margin">
               {
                     props.information.map((data) => {
                         return(

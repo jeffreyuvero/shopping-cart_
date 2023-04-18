@@ -1,6 +1,7 @@
 export const INITIAL_STATE ={
     product : [],
-    cart: []
+    cart: [],
+    collect_cart: []
 }
 
 
@@ -12,10 +13,19 @@ export const postReducer = (state, action) => {
                 product: action
             }
         case "ADD_CART":
-            console.log(action.payload)
             return {
                 ...state,
                 cart: [...state.cart, action.payload]
+            }
+        case "GET_CART":
+
+            const new_product = state.product.payload.filter((p) => {
+                return state.cart.includes(p.id); 
+            })
+
+            return {
+                ...state,
+                collect_cart: {...state.collect_cart, new_product}
             }
         default:
             return state; 
