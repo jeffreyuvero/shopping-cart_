@@ -7,7 +7,7 @@ import {
 
  import '../App.css'
 
- import {INITIAL_STATE, postReducer} from "./postReducer";
+ import {INITIAL_STATE, postReducer} from "../postReducer";
 
 const Product = () => {
 

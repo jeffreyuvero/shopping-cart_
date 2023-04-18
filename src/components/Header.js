@@ -2,7 +2,8 @@ import shoppingCart from '../images/shoppingCart.png'
 import shoppingCart2 from '../images/shoppingCart2.png'
 
 
-const Header = () => {
+
+const Header = (props) => {
     return(
         <div className = "col-12 ">
                 <div className = "row navigator">
@@ -50,7 +51,7 @@ const Header = () => {
                             title="Home" 
                             alt="Home"
                         />
-                        <span class="badge badge-pill badge-danger">2</span>
+                        <span class="badge badge-pill badge-danger">{props.ordered}</span>
                     </div>
                 </div>
         </div>

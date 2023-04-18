@@ -1,6 +1,6 @@
 export const INITIAL_STATE ={
     product : [],
-    cart: []
+    cart: [1,2,3]
 }
 
 
