@@ -11,7 +11,6 @@ const Product = (props) => {
         return null; 
     }
     
-
     return(
         <>
             <div className = "row product-margin">

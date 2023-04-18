@@ -3,11 +3,14 @@ const cart = (props) => {
     if (!props.collections ) {
         return null; 
     }
+
+    console.log("props.collections")
+    console.log(props.collections)
     return(
         <div className = "row cart-margin">
             <div class="card col-12" >
                 <div class="card-header">
-                    Your Cart <strong> (Total Price: 88)  </strong>
+                    Your Cart <strong> (Total Price: {props.total})  </strong>
                 </div>
                 {
                     props.collections.map((collect, index) => {

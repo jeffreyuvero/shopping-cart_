@@ -48,6 +48,11 @@ function App() {
           type: "GET_CART"
       })
       
+
+      dispatch({
+          type: "GET_TOTAL"
+      })
+      
   }
 
 
@@ -57,6 +62,14 @@ function App() {
         payload: itemId
     })
 
+    dispatch({
+        type: "GET_CART"
+    })
+
+    dispatch({
+        type: "GET_TOTAL"
+    })
+  
   }
 
 
@@ -68,7 +81,7 @@ function App() {
                 <Product information = {information} onHandleAddToCart= {onHandleAddToCart}/>
             </div>
             <div className = "col-2">
-                <Cart collections = {state.collect_cart.new_product} onHandleRemoveCart = {onHandleRemoveCart}/>
+                <Cart collections = {state.collect_cart.new_product} total = {state.total} onHandleRemoveCart = {onHandleRemoveCart}/>
             </div>
         </div>
     </div>
